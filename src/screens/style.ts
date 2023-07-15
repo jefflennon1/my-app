@@ -5,6 +5,8 @@ export const style = StyleSheet.create({
         margin:0,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#ffffff',
+        backgroundColor: '#0000',
+        color: '#ffff',
+        flex: 1,
     }
 })
