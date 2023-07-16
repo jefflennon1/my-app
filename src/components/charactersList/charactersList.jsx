@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import {FlatList , Text} from 'react-native';
+import {FlatList , Text, View, TouchableOpacity} from 'react-native';
 import { Character } from '../character/index';
 import { styles } from './styles';
 
@@ -14,14 +14,24 @@ export function Characters(){
         .then(response => response.json())
         .then(json =>{
           setList(json.results)
-          setNextPage(json.next) 
-          setPrevPage(json.prev)
+          setNextPage(json.info.next) 
+          setPrevPage(json.info.prev)
         }
         );
     },[]);
 
     return(
-        <>
+        <> 
+        <View style={styles.pages}>
+            <TouchableOpacity  onPress={()=> handleNavigatePages(next)}> 
+                <Text style={styles.buttonText}>{`>>`}</Text>
+              </TouchableOpacity> 
+                
+
+            <TouchableOpacity style={styles.text} onPress={()=> handleNavigatePages(prev)} >
+                <Text style={styles.buttonText} >{'<<'}</Text>
+            </TouchableOpacity>
+        </View>
         <FlatList
             style={styles.flatList}
             data={list}
@@ -31,9 +41,9 @@ export function Characters(){
                 gender={item.gender}
                 image={item.image}
                 name={item.name}
-                species={item.species}
-                nextPage={next}
-                prevPage={prev}
+                species={item.species} 
+                next={nextPage}
+                prev={prevPage}
                 />
             )}
           keyExtractor={item => item.id}
@@ -45,4 +55,7 @@ export function Characters(){
         />
         </>
     )
+    function handleNavigatePages(page){
+
+    }
 }
