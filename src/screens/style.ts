@@ -5,10 +5,11 @@ export const style = StyleSheet.create({
         margin:0,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#0000',
+        backgroundColor: '#01010101S',
         color: '#ffff',
         flex: 1,
         flexDirection: 'column',
         width: '100%',
+        
     }
 })

@@ -17,8 +17,13 @@ export function Character({id, name, image, species, gender} : props){
                 style={styles.image}
                 source={{uri: image}}
             />
+            <Text style={styles.title}>NAME: </Text>
             <Text style={styles.text}>{name}</Text>
+
+            <Text style={styles.title}>SPECIES:</Text>
             <Text style={styles.text}>{species}</Text>
+
+            <Text style={styles.title}>GENDER:</Text>
             <Text style={styles.text}>{gender}</Text>
         </View>
     )
