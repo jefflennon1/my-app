@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react';
-import { FlatList , Text} from 'react-native';
+import {FlatList , Text} from 'react-native';
+import { Character } from '../character/index'
 
 export function Characters(){
     const [list, setList] = useState([]);
@@ -17,7 +18,12 @@ export function Characters(){
         <FlatList
             data={list}
             renderItem={({item})=>(
-                <Text >{item.name}</Text>
+              <Character  
+                gender={item.gender}
+                image={item.image}
+                name={item.name}
+                species={item.species}
+                />
             )}
           keyExtractor={item => item.id}
           ListEmptyComponent={() => (

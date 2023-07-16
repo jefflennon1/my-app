@@ -1,6 +1,6 @@
 import {Text, View} from 'react-native';
 import { style } from './style';
-import { Characters } from '../components/characters/characters';  
+import { Characters } from '../components/charactersList/charactersList';  
 
 export function Index(){
     return (
