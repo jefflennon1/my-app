@@ -1,6 +1,8 @@
 import {useState, useEffect} from 'react';
 import {FlatList , Text} from 'react-native';
-import { Character } from '../character/index'
+import { Character } from '../character/index';
+import { styles } from './styles';
+
 
 export function Characters(){
     const [list, setList] = useState([]);
@@ -16,6 +18,7 @@ export function Characters(){
     return(
         <>
         <FlatList
+            style={styles.flatList}
             data={list}
             renderItem={({item})=>(
               <Character  

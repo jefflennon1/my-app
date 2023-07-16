@@ -9,7 +9,6 @@ export const styles = StyleSheet.create({
         borderWidth: 3,
         margin: 10,
         borderRadius: 10,
-        width: '80%'
     },
     image:{
         borderRadius: 5,
